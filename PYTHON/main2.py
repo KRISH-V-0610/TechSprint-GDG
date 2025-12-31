@@ -25,13 +25,22 @@ from firebase_admin import firestore
 load_dotenv()
 
 # Firebase Initialization
-cred_path = os.path.join("..", "backend", "serviceAccountKey.json")
+possible_paths = [
+    os.path.join("credentials", "serviceAccountKey.json"),
+    "serviceAccountKey.json",
+    os.path.join("..", "backend", "serviceAccountKey.json")
+]
+cred_path = next((p for p in possible_paths if os.path.exists(p)), None)
+
 try:
+    if not cred_path:
+        raise FileNotFoundError("serviceAccountKey.json not found in any expected location")
+        
     cred = credentials.Certificate(cred_path)
     if not firebase_admin._apps:
         firebase_admin.initialize_app(cred)
     db = firestore.client()
-    print("Firebase Admin Initialized")
+    print(f"Firebase Admin Initialized using credentials from: {cred_path}")
 except Exception as e:
     print(f"Error initializing Firebase: {e}")
 

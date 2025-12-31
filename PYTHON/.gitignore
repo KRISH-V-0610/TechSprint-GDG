@@ -4,6 +4,7 @@ venv/
 ENV/
 env/
 
+credentials/
 # Python cache
 __pycache__/
 *.py[cod]
