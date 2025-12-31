@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+/* Custom Premium Styles */
+:root {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Cyber-Medical Palette */
+  --color-primary: #10b981;
+  /* Emerald 500 */
+  --color-primary-light: #34d399;
+  /* Emerald 400 */
+  --color-primary-dark: #047857;
+  /* Emerald 700 */
+  --color-bg-dark: #050b0a;
+  /* Deep Charcoal */
+  --color-card-dark: #0a1210;
+  /* Darker Glass */
+  --color-text-light: #ecfdf5;
+  /* Emerald 50 */
+  --color-text-dim: #03120c;
+  /* Emerald 300 (dimmed) */
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #050b0a;
+  color: #ecfdf5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.dark .glass-panel {
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Premium Button Overrides */
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 15px -3px rgba(14, 165, 233, 0.3);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
