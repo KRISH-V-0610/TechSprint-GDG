@@ -176,7 +176,7 @@ const analyzeSkinImage = async (req, res) => {
         const payload = { obj_id: patientId };
         if (imageUrl) payload.imageUrl = imageUrl;
 
-        const pythonApiUrl = process.env.PYTHON_API_URL || 'http://127.0.0.1:6700';
+        const pythonApiUrl = process.env.PYTHON_API_URL || 'http://127.0.0.1:10000';
         const pythonResponse = await axios.post(`${pythonApiUrl}/predict`, payload);
 
         const pythonData = pythonResponse.data;

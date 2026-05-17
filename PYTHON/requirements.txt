@@ -13,7 +13,7 @@ asyncio
 textwrap3
 arxiv
 google-adk
-google-genai
+google-generativeai
 duckduckgo-search
 pypdf
 pydantic

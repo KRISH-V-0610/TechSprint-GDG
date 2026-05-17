@@ -4,6 +4,9 @@ venv/
 ENV/
 env/
 
+dataset/
+classification_report_Model_C.csv/
+
 credentials/
 # Python cache
 __pycache__/
