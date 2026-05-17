@@ -1,17 +1,20 @@
 --extra-index-url https://download.pytorch.org/whl/cpu
+
+# Core API
 fastapi
-uvicorn
-gunicorn
+uvicorn[standard]
 python-dotenv
 requests
-numpy
-scikit-learn
+pydantic
+
+# ML
 torch
 torchvision
 Pillow
+numpy
+scikit-learn
+
+# Firebase + Google AI (pin protobuf to resolve version conflict between the two)
+protobuf>=3.20.0,<5.0.0
 firebase-admin
-arxiv
 google-generativeai
-duckduckgo-search
-pypdf
-pydantic
