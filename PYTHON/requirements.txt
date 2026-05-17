@@ -1,3 +1,4 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
 fastapi
 uvicorn
 gunicorn
@@ -9,10 +10,7 @@ torch
 torchvision
 Pillow
 firebase-admin
-asyncio
-textwrap3
 arxiv
-google-adk
 google-generativeai
 duckduckgo-search
 pypdf
